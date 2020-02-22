@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import axios from "axios";
+import logo from '../logo.svg';
 
 class Quote extends Component {
   state = {
     quote: "",
     character: "",
-    imageSrc: ""
+    imageSrc: logo
   };
 
   componentDidMount() {
@@ -37,21 +38,20 @@ class Quote extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="App-container">
         <div className="quote-card">
         <img src={this.state.imageSrc} className="App-logo" alt="logo" />
           <h2>
             <strong>{this.state.quote}</strong>
           </h2>
           <h4>
-            <i>&mdash; {this.state.character}</i>
+            <i>{this.state.character}</i>
           </h4>
         </div>
-        <button className="quote" onClick={this.getQuote}>
+        <button className="quote App-btn" onClick={this.getQuote}>
           Get Quote
         </button>
-        <button className="fa fa-twitter" onClick={this.tweetQuote}>
-          {" "}
+        <button className="App-tweetButton App-btn" onClick={this.tweetQuote}>
           Tweet
         </button>
       </div>
